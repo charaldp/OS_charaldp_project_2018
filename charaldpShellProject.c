@@ -35,7 +35,7 @@ void interactive() {
 	int status=0;
 	while (1) {
 		printf("papadiakos_8302> ");
-		if (fgets(fullString, MAX_INPUT_CHARS, stdin) && (!feof(stdin)) && (!ferror(stdin)) && (strlen(fullString)!=1)){
+		if (fgets(fullString, MAX_INPUT_CHARS, stdin) && (!feof(stdin)) && (!ferror(stdin)) && (strlen(fullString)>1)){
 			char** semicolonCMDs=(splitWithNSizeDelimiter(removePeripheralCharsFromString(removePeripheralCharsFromString(fullString, '\n'), ' ') , ';' , 1));
 			for(int i=0;*(semicolonCMDs+i);i++) {
 				char** ampersandCMDs=(splitWithNSizeDelimiter(removePeripheralCharsFromString( *(semicolonCMDs+i) , ' ') , '&', 2));
