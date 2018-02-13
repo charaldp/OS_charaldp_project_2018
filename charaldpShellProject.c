@@ -62,7 +62,7 @@ void batch(char *batchFileName){
 	int status=0;
 	char fileLine[MAX_INPUT_CHARS];
 	while (fgets(fileLine, sizeof(fileLine) , batchFile)) {
-		if ((!feof(batchFile)) && (!ferror(batchFile)) && (strlen(fileLine)!=1)){
+		if ((!feof(batchFile)) && (!ferror(batchFile)) && (strlen(fileLine)>1)){
 			char** semicolonCMDs=(splitWithNSizeDelimiter(removePeripheralCharsFromString(removePeripheralCharsFromString(fileLine, '\n'), ' ') , ';' , 1));
 			for(int i=0;*(semicolonCMDs+i);i++) {
 				char** ampersandCMDs=(splitWithNSizeDelimiter(removePeripheralCharsFromString( *(semicolonCMDs+i) , ' ') , '&', 2));
