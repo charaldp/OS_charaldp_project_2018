@@ -1,5 +1,6 @@
 ls -l
 
 touch file1.txt && no command && ss ; ls ; no command2 ; echo This_semicolon_command_will_run
-   
+
+
    ls  ;   mkdir thisDir
